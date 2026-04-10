@@ -8,7 +8,6 @@ struct Event {
     char name[50];
 };
 
-// Predefined events (you can add more)
 struct Event events[] = {
     {17, 2, "Rafi's Birthday"},
     {10, 4, "Oyshikee's Birthday"},

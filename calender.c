@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Structure for events
 struct Event {
     int day;
     int month;
@@ -18,7 +17,6 @@ struct Event events[] = {
 
 int totalEvents = 5;
 
-// Get days in month
 int getDays(int month, int year) {
     if(month == 2) {
         if((year%4==0 && year%100!=0) || (year%400==0))
@@ -31,8 +29,6 @@ int getDays(int month, int year) {
     else
         return 31;
 }
-
-// Get starting day
 int getStartDay(int year, int month) {
     int d = 1;
     if(month < 3) {
@@ -45,8 +41,6 @@ int getStartDay(int year, int month) {
     int day = (d + (13*(month+1))/5 + k + k/4 + j/4 + 5*j) % 7;
     return (day + 6) % 7;
 }
-
-// Print events for a month
 void showEvents(int month) {
     printf("\n Events:\n");
     int found = 0;
@@ -62,7 +56,6 @@ void showEvents(int month) {
         printf("  No events this month.\n");
 }
 
-// Print single month
 void printMonth(int month, int year) {
     char *months[] = {"","January","February","March","April","May","June",
                       "July","August","September","October","November","December"};
@@ -88,7 +81,6 @@ void printMonth(int month, int year) {
     showEvents(month);
 }
 
-// Print full year
 void printYear(int year) {
     for(int m=1; m<=12; m++) {
         printMonth(m, year);
